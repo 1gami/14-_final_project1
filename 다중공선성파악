@@ -1,0 +1,14 @@
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+from statsmodels.tools.tools import add_constant
+
+X = df_corr.select_dtypes(include='number').dropna()
+
+X_const = add_constant(X)
+
+# VIF
+vif_df = pd.DataFrame()
+vif_df["변수명"] = X_const.columns
+vif_df["VIF"] = [variance_inflation_factor(X_const.values, i) for i in range(X_const.shape[1])]
+
+vif_df = vif_df.sort_values("VIF", ascending=False)
+print(vif_df)
