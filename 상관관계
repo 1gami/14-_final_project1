@@ -1,0 +1,24 @@
+# 상관관계 분석 시각화
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import LabelEncoder
+
+# 데이터 load
+df = pd.read_parquet("2.신용정보_all_month.parquet")
+
+df_corr = df.copy()
+
+# Label Encoding
+for col in df_corr.select_dtypes(include=['object', 'category']).columns:
+    df_corr[col] = LabelEncoder().fit_transform(df_corr[col].astype(str))
+
+corr_matrix = df_corr.corr()
+
+plt.figure(figsize=(28, 24))
+sns.heatmap(corr_matrix, annot=True, fmt=".2f", cmap='coolwarm', square=True)
+plt.title("Corr")
+plt.tight_layout()
+plt.show()
+
