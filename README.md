@@ -1,7 +1,6 @@
 ## 공지사항
-github에 파일 잘못올리신거 있으시면 
-해당 파일 클릭 -> 오른쪽 위 ㆍㆍㆍ 클릭 ->  Delete file 해주시길 바랍니다 !!
-파일이 너무 많아 찾아보기 힘드네요 ㅠ
+# Colab Pro Time Table
+(https://docs.google.com/spreadsheets/d/1sT_hI7y0K2gFWt3GRhaCFIX5O0KhPMM9Wtj6k8cWBgQ/edit?usp=sharing)
 
 
 # 💳 Segment 분류 프로젝트  
